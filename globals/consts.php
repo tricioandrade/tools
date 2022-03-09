@@ -24,12 +24,23 @@ class consts extends cleaner
         define('serverImages', self::server.'app/views/images/');
         define('dashboard', self::server.'start/');
         define('img_url', server.self::img_url);
-        define('module', cleaner::filter(cleaner::get, self::get, cleaner::sanitize_url));
-        define('include_from_module', cleaner::filter(cleaner::get, self::include, cleaner::sanitize_url));
-        define('set_include', cleaner::filter(cleaner::get, self::set, cleaner::sanitize_url));
         define('author', 'Patrício Andrade');
         define('loginlink', self::server.'_blank/login/');
         define('outonologo', img_url.'icon/outonologo.png');
         define('carouselimages', img_url.'carousel/');
+
+        self::urlDefined();
+        self::wordsDefined();
+    }
+
+    public static function urlDefined(){
+        define('module', cleaner::filter(cleaner::get, self::get, cleaner::sanitize_url));
+        define('include_from_module', cleaner::filter(cleaner::get, self::include, cleaner::sanitize_url));
+        define('set_include', cleaner::filter(cleaner::get, self::set, cleaner::sanitize_url));
+    }
+
+    public static function wordsDefined(){
+        define('email', 'email');
+        define('login_table', 'login');
     }
 }
